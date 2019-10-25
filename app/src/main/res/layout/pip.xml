@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+android:orientation="vertical"
+xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+android:layout_height="match_parent">
+<Button
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:text="相机"
+    android:textColor="#000"
+    android:gravity="center"
+    android:background="#fff"
+    android:id="@+id/xiangji"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#FF000000"
+        >
+
+    </View>
+
+<Button
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:text="相册"
+    android:textColor="#000"
+    android:gravity="center"
+    android:background="#fff"
+    android:id="@+id/xiangce"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="#FF000000"
+        ></View>
+
+<Button
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:text="取消"
+    android:textColor="#000"
+    android:gravity="center"
+    android:background="#fff"
+    android:id="@+id/quxiao"/>
+</LinearLayout>

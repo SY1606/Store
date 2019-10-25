@@ -1,0 +1,296 @@
+package com.science.com.rchs.view.fragment_two;
+
+import android.app.Dialog;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.animation.Animation;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.bigkoo.pickerview.builder.TimePickerBuilder;
+import com.bigkoo.pickerview.listener.OnTimeSelectChangeListener;
+import com.bigkoo.pickerview.listener.OnTimeSelectListener;
+import com.bigkoo.pickerview.view.TimePickerView;
+import com.google.gson.Gson;
+import com.jzxiang.pickerview.TimePickerDialog;
+import com.jzxiang.pickerview.data.Type;
+import com.jzxiang.pickerview.listener.OnDateSetListener;
+import com.science.com.rchs.R;
+import com.science.com.rchs.data.bean.WinS;
+import com.science.com.rchs.di.contract.BillContract;
+import com.science.com.rchs.di.contract.WinContract;
+import com.science.com.rchs.di.presenter.WeiPresenter;
+import com.science.com.rchs.net.ToastUtil;
+import com.science.com.rchs.view.activity_bill.DalisListActivity;
+import com.science.com.rchs.view.activity_set.ChooseStActivity;
+import com.science.com.rchs.view.activity_set.ChooseStoreActivity;
+
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import butterknife.Unbinder;
+
+
+public class Frag_s_wei extends Fragment implements WinContract.WinView, OnDateSetListener {
+
+
+    @BindView(R.id.start_time)
+    Button startTimes;
+    @BindView(R.id.end_time)
+    Button endTimes;
+    @BindView(R.id.chooes)
+    RelativeLayout chooes;
+    Unbinder unbinder;
+    @BindView(R.id.mlogin)
+    Button mlogin;
+    @BindView(R.id.all)
+    TextView all;
+    private WinContract.WinPresenter winPresenter;
+    private RecyclerView recy_wei;
+
+
+    private String token;
+
+    TimePickerDialog mDialogAll;
+    SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+
+    String type = "wx";
+    private String startText;
+    private String enttext;
+    private int startTime;
+    private TextView texts;
+    private int endTime;
+    private BillContract.BillPresenter billPresenter;
+
+    private TimePickerView pvTime;
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.frag_s_wei, container, false);
+
+        unbinder = ButterKnife.bind(this, view);
+        SharedPreferences sps =getActivity().getSharedPreferences("ids",Context.MODE_PRIVATE);
+        String name = sps.getString("names","");
+
+        all.setText(name);
+        SharedPreferences sp = getActivity().getSharedPreferences("login", Context.MODE_PRIVATE);
+        token = sp.getString("token", "");
+
+        winPresenter = new WeiPresenter();
+        winPresenter.attachView(this);
+
+        texts = view.findViewById(R.id.texts);
+
+
+
+        long tenYears = 10L * 365 * 1000 * 60 * 60 * 24L;
+        mDialogAll = new TimePickerDialog.Builder()
+                .setCallBack(this)
+                .setCancelStringId("Cancel")
+                .setSureStringId("Sure")
+                .setTitleStringId("TimePicker")
+                .setYearText("Year")
+                .setMonthText("Month")
+                .setDayText("Day")
+                .setHourText("Hour")
+                .setMinuteText("Minute")
+                .setCyclic(false)
+                .setMinMillseconds(System.currentTimeMillis())
+                .setMaxMillseconds(System.currentTimeMillis() + tenYears)
+                .setCurrentMillseconds(System.currentTimeMillis())
+                .setThemeColor(getResources().getColor(R.color.timepicker_dialog_bg))
+                .setType(Type.ALL)
+                .setWheelItemTextNormalColor(getResources().getColor(R.color.timetimepicker_default_text_color))
+                .setWheelItemTextSelectorColor(getResources().getColor(R.color.timepicker_toolbar_bg))
+                .setWheelItemTextSize(12)
+                .build();
+        initTimePicker();
+
+        SharedPreferences sp1 = getActivity().getSharedPreferences("ids", Context.MODE_PRIVATE);
+        String names = sps.getString("names", "");
+
+        if (all.equals("")) {
+            all.equals("afadfsdf");
+        } else {
+            all.setText(names);
+        }
+
+        return view;
+    }
+
+
+
+
+    private void initTimePicker() {
+        pvTime = new TimePickerBuilder(getActivity(), new OnTimeSelectListener() {
+            @Override
+            public void onTimeSelect(Date date, View v) {
+
+                startTimes.setText(getTime(date));
+
+                StringToTimestamps(getTime(date));
+            }
+
+
+            private String getTime(Date date) {
+
+                Log.d("getTime()", "choice date millis: " + date.getTime());
+                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+                return format.format(date);
+
+            }
+
+        })
+                .setTimeSelectChangeListener(new OnTimeSelectChangeListener() {
+                    @Override
+                    public void onTimeSelectChanged(Date date) {
+
+                    }
+                })
+                .setType(new boolean[]{true, true, true, true, true, true})
+                .isDialog(true) //默认设置false ，内部实现将DecorView 作为它的父控件。
+                .addOnCancelClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                    }
+                })
+                .build();
+
+        Dialog mDialog = pvTime.getDialog();
+        if (mDialog != null) {
+
+            FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    Gravity.BOTTOM);
+
+            params.leftMargin = 0;
+            params.rightMargin = 0;
+            pvTime.getDialogContainerLayout().setLayoutParams(params);
+
+            Window dialogWindow = mDialog.getWindow();
+            if (dialogWindow != null) {
+                dialogWindow.setWindowAnimations(com.bigkoo.pickerview.R.style.picker_view_slide_anim);//修改动画样式
+                dialogWindow.setGravity(Gravity.BOTTOM);//改成Bottom,底部显示
+                dialogWindow.setDimAmount(0.1f);
+            }
+        }
+
+    }
+
+    private void StringToTimestamps(String time) {
+        startTime = 0;
+        try {
+            startTime = (int) ((Timestamp.valueOf(time).getTime()) / 1000);
+            Log.i("dsfrta", startTime + "");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (startTime == 0) {
+            System.out.println("String转10位时间戳失败");
+        }
+
+    }
+
+
+
+    @Override
+    public void onDateSet(TimePickerDialog timePickerView, long millseconds) {
+        startText = getDateToString(millseconds);
+        endTimes.setText(startText);
+
+
+        StringToTimestamp(startText);
+    }
+
+    private void StringToTimestamp(String startText) {
+        endTime = 0;
+        try {
+            endTime = (int) ((Timestamp.valueOf(startText).getTime()) / 1000);
+            Log.i("nmnmnm", endTime + "");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (endTime == 0) {
+            System.out.println("String转10位时间戳失败");
+        }
+    }
+
+    public String getDateToString(long time) {
+        Date d = new Date(time);
+        return sf.format(d);
+
+
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
+    }
+
+    @OnClick({R.id.start_time, R.id.end_time, R.id.chooes, R.id.mlogin,R.id.all})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.start_time:
+                pvTime.show(view);
+                break;
+            case R.id.end_time:
+                mDialogAll.show(getActivity().getSupportFragmentManager(), "all");
+                break;
+            case R.id.chooes:
+                Intent intent = new Intent(getActivity(), ChooseStActivity.class);
+                startActivity(intent);
+                getActivity().finish();
+                break;
+            case R.id.mlogin:
+                if (startTime > endTime) {
+                    ToastUtil.showToast(getActivity(),"开始时间不能大于结束时间",Toast.LENGTH_SHORT);
+                }else if (startTime==endTime){
+                    ToastUtil.showToast(getActivity(),"开始时间不能等于结束时间",Toast.LENGTH_SHORT);
+                }else {
+                    SharedPreferences sp = getActivity().getSharedPreferences("win",Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sp.edit();
+                    editor.putString("tokens",token);
+                    editor.putString("types",type);
+                    editor.putInt("startTimes",startTime);
+                    editor.putInt("endTimes",endTime);
+                    editor.commit();
+                    winPresenter.requestWinData(token, type, startTime, endTime);
+                    getActivity().finish();
+                }
+                break;
+        }
+    }
+    @Override
+    public void showWinData(String message) {
+        Toast.makeText(getActivity(),message,Toast.LENGTH_SHORT).show();
+        Gson gson = new Gson();
+        WinS weiBean = gson.fromJson(message, WinS.class);
+        List<WinS.DataBean> list = (List<WinS.DataBean>) weiBean.getData();
+    }
+}

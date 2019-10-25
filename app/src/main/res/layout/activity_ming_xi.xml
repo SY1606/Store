@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.activity.MingXiActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_49"
+        android:background="#FF00A0E9"
+
+        >
+        <ImageView
+            android:id="@+id/fan"
+            android:layout_width="@dimen/dp_18"
+            android:layout_height="@dimen/dp_18"
+            android:layout_marginTop="@dimen/dp_18"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:src="@drawable/fan"
+            />
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="优惠券核销明细"
+            android:textColor="#FFFFFFFF"
+            android:layout_marginTop="@dimen/dp_13"
+            android:textSize="@dimen/sp_18"
+            android:gravity="center"
+            android:textStyle="bold"
+
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        >
+        <RadioGroup
+            android:id="@+id/rg_focus"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:orientation="horizontal"
+            android:layout_below="@+id/leixing"
+            android:background="#ffffff"
+            >
+            <RadioButton
+                android:id="@+id/a11"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:button="@null"
+                android:text="全部"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textSize="@dimen/sp_15"
+                android:textColor="@drawable/text1"
+                android:layout_marginLeft="@dimen/dp_10"
+
+                />
+            <RadioButton
+                android:id="@+id/dai"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="fill_parent"
+                android:button="@null"
+                android:text="代金券"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textColor="@drawable/text1"
+                android:textSize="@dimen/sp_15"
+
+                />
+
+            <RadioButton
+                android:id="@+id/you"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="fill_parent"
+                android:button="@null"
+                android:text="优惠券"
+                android:textColor="@drawable/text1"
+                android:textSize="@dimen/sp_15"
+                android:gravity="center"
+                android:layout_weight="1"
+
+                />
+            <RadioButton
+                android:id="@+id/zhe"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="fill_parent"
+                android:button="@null"
+                android:text="折扣券"
+                android:textColor="@drawable/text1"
+                android:gravity="center"
+                android:textSize="@dimen/sp_15"
+                android:layout_weight="1"
+
+                />
+
+        </RadioGroup>
+        <FrameLayout
+            android:id="@+id/frag_myfocus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+        </FrameLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

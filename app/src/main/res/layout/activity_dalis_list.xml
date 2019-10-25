@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    tools:context=".view.activity_bill.DalisListActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_49"
+        android:background="#FF00A0E9"
+
+        >
+
+        <ImageView
+            android:id="@+id/fan"
+            android:layout_width="@dimen/dp_18"
+            android:layout_height="@dimen/dp_18"
+            android:layout_marginTop="@dimen/dp_18"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:src="@drawable/fan"
+
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="日结清单"
+            android:textColor="#FFFFFFFF"
+            android:textSize="@dimen/sp_18"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/dp_13"
+            android:layout_centerInParent="true"
+            />
+        <TextView
+            android:id="@+id/shai"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="筛选"
+            android:textColor="#FFFFFFFF"
+            android:textSize="@dimen/sp_14"
+            android:gravity="center"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_15"
+            />
+    </RelativeLayout>
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/shou"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF333333"
+                    android:text="收款统计"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/sp_15"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    />
+                <FrameLayout
+                    android:id="@+id/fragments"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </FrameLayout>
+                <TextView
+                    android:id="@+id/money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF333333"
+                    android:text="金额(元)"
+                    android:textSize="@dimen/sp_15"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dp_15"
+                    />
+
+                <View
+                    android:id="@+id/vie"
+                    android:layout_width="@dimen/dp_345"
+                    android:layout_height="@dimen/dp_1"
+                    android:layout_below="@+id/shou"
+                    android:background="#FFCCCCCC"
+                    android:layout_marginTop="@dimen/dp_11"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginRight="@dimen/dp_15"
+                    >
+                </View>
+
+
+
+                <TextView
+                    android:id="@+id/weixin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF333333"
+                    android:text="微信"
+                    android:textSize="@dimen/sp_15"
+                    android:layout_marginTop="@dimen/dp_30"
+                    android:layout_below="@+id/shou"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    />
+                <TextView
+                    android:id="@+id/weixin_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF333333"
+                    android:text="0"
+                    android:textSize="@dimen/sp_14"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_below="@+id/vie"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dp_15"
+                    />
+
+                <TextView
+                    android:id="@+id/pay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF333333"
+                    android:text="支付宝"
+                    android:textSize="@dimen/sp_15"
+                    android:layout_marginTop="@dimen/dp_71"
+                    android:layout_below="@+id/shou"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    />
+                <TextView
+                    android:id="@+id/pay_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF333333"
+                    android:text="0"
+                    android:textSize="@dimen/sp_14"
+                    android:layout_marginTop="@dimen/dp_60"
+                    android:layout_below="@+id/vie"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dp_15"
+                    />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF333333"
+                    android:text="累计(不含退款)"
+                    android:textSize="@dimen/sp_15"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/dp_120"
+                    android:layout_below="@+id/shou"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    />
+                <TextView
+                    android:id="@+id/leiji"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF333333"
+                    android:text="0"
+                    android:textSize="@dimen/sp_14"
+                    android:layout_marginTop="@dimen/dp_110"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/vie"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dp_15"
+                    />
+
+                <View
+                    android:id="@+id/vies"
+                    android:layout_width="@dimen/dp_345"
+                    android:layout_height="@dimen/dp_1"
+                    android:layout_below="@+id/shou"
+                    android:background="#FFCCCCCC"
+                    android:layout_marginTop="@dimen/dp_161"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginRight="@dimen/dp_15"
+                    >
+                </View>
+                <TextView
+                    android:id="@+id/jybs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF333333"
+                    android:text="交易笔数"
+                    android:textSize="@dimen/sp_18"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/dp_181"
+                    android:layout_below="@+id/shou"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF333333"
+                    android:text="微信交易笔数"
+                    android:textSize="@dimen/sp_15"
+                    android:layout_marginTop="@dimen/dp_223"
+                    android:layout_below="@+id/shou"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    />
+                <TextView
+                    android:id="@+id/weixin_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF333333"
+                    android:text="0"
+                    android:textSize="@dimen/sp_14"
+                    android:layout_marginTop="@dimen/dp_213"
+                    android:layout_below="@+id/vie"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dp_15"
+                    />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF333333"
+                    android:text="支付宝交易笔数"
+                    android:textSize="@dimen/sp_15"
+                    android:layout_marginTop="@dimen/dp_263"
+                    android:layout_below="@+id/shou"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    />
+                <TextView
+                    android:id="@+id/pay_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF333333"
+                    android:text="0"
+                    android:textSize="@dimen/sp_14"
+                    android:layout_marginTop="@dimen/dp_253"
+                    android:layout_below="@+id/vie"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dp_15"
+                    />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF333333"
+                    android:text="累计交易笔数"
+                    android:textSize="@dimen/sp_15"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/dp_308"
+                    android:layout_below="@+id/shou"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    />
+                <TextView
+                    android:id="@+id/number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF333333"
+                    android:text="0"
+                    android:textSize="@dimen/sp_14"
+                    android:layout_marginTop="@dimen/dp_298"
+                    android:layout_below="@+id/vie"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dp_15"
+                    />
+
+                <View
+                    android:id="@+id/viess"
+                    android:layout_width="@dimen/dp_345"
+                    android:layout_height="@dimen/dp_1"
+                    android:layout_below="@+id/shou"
+                    android:background="#FFCCCCCC"
+                    android:layout_marginTop="@dimen/dp_348"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginRight="@dimen/dp_15"
+                    >
+                </View>
+
+                <TextView
+                    android:id="@+id/tongji"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF333333"
+                    android:text="会员消费统计"
+                    android:textSize="@dimen/sp_18"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_below="@+id/viess"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF333333"
+                    android:text="会员消费"
+                    android:textSize="@dimen/sp_15"
+                    android:layout_marginTop="@dimen/dp_63"
+                    android:layout_below="@+id/viess"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    />
+
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF333333"
+                    android:text="会员充值"
+                    android:textSize="@dimen/sp_15"
+                    android:layout_marginTop="@dimen/dp_103"
+                    android:layout_below="@+id/viess"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    />
+                <TextView
+                    android:id="@+id/xiaofei"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF333333"
+                    android:text="0"
+                    android:textSize="@dimen/sp_14"
+                    android:layout_marginTop="@dimen/dp_63"
+                    android:layout_below="@+id/viess"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dp_15"
+                    />
+
+                <TextView
+                    android:id="@+id/chongzhi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF333333"
+                    android:text="0"
+                    android:textSize="@dimen/sp_14"
+                    android:layout_marginTop="@dimen/dp_103"
+                    android:layout_below="@+id/viess"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dp_15"
+                    />
+                <View
+                    android:id="@+id/viesss"
+                    android:layout_width="@dimen/dp_345"
+                    android:layout_height="@dimen/dp_1"
+                    android:layout_below="@+id/viess"
+                    android:background="#FFCCCCCC"
+                    android:layout_marginTop="@dimen/dp_143"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginRight="@dimen/dp_15"
+                    >
+                </View>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF333333"
+                    android:text="卡券核销统计"
+                    android:textSize="@dimen/sp_18"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_below="@+id/viesss"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF333333"
+                    android:text="微信卡券(张)"
+                    android:textSize="@dimen/sp_15"
+                    android:layout_marginTop="@dimen/dp_63"
+                    android:layout_below="@+id/viesss"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    />
+
+                <TextView
+                    android:id="@+id/kaquan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF333333"
+                    android:text="0"
+                    android:textSize="@dimen/sp_14"
+                    android:layout_marginTop="@dimen/dp_63"
+                    android:layout_below="@+id/viesss"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dp_15"
+                    />
+                <View
+                    android:id="@+id/viessss"
+                    android:layout_width="@dimen/dp_345"
+                    android:layout_height="@dimen/dp_1"
+                    android:layout_below="@+id/viesss"
+                    android:background="#FFCCCCCC"
+                    android:layout_marginTop="@dimen/dp_103"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginRight="@dimen/dp_15"
+                    ></View>
+
+                <TextView
+                    android:id="@+id/stattimes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="开始时间：2019-03-08 00:00:00"
+                    android:textColor="#FF999999"
+                    android:textSize="@dimen/sp_12"
+                    android:layout_below="@+id/viessss"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    />
+                <TextView
+                    android:id="@+id/endtimes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="结束时间：2019-03-08 00:00:00"
+                    android:textColor="#FF999999"
+                    android:textSize="@dimen/sp_12"
+                    android:layout_below="@+id/viessss"
+                    android:layout_marginTop="@dimen/dp_44"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp_120"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@id/viessss"
+                    android:orientation="vertical"
+                    >
+
+                    <Button
+                        android:id="@+id/baocun"
+                        android:layout_width="@dimen/dp_345"
+                        android:layout_height="@dimen/dp_40"
+                        android:background="@drawable/fucks"
+                        android:focusable="false"
+                        android:text="保存到相册"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/sp_16"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

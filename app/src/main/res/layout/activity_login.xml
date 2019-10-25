@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    >
+
+    <ImageView
+        android:id="@+id/photo"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_100"
+        android:src="@drawable/wanda2"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_65"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/member_activity_login_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_70"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:layout_marginRight="@dimen/dp_40"
+            android:layout_marginLeft="@dimen/dp_40">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_30"
+                android:layout_marginTop="@dimen/dp_30">
+
+                <EditText
+                    android:id="@+id/medit_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@null"
+                    android:inputType="number"
+                    android:textColor="#404040"
+                    android:textCursorDrawable="@drawable/btn3"
+                    android:digits="0123456789"
+                    android:textSize="@dimen/sp_15"
+                    android:hint="请输入帐号"
+                    android:imeOptions="actionNext"
+                    android:textColorHint="#FFCCCCCC" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="#FFEEEEEE" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_30"
+                android:layout_marginTop="@dimen/dp_30">
+
+                <EditText
+                    android:id="@+id/medit_pass"
+                    android:layout_width="@dimen/dp_250"
+                    android:layout_height="@dimen/dp_40"
+                    android:textColor="#404040"
+                    android:background="@null"
+                    android:textSize="@dimen/sp_15"
+                    android:inputType="textPassword"
+                    android:textCursorDrawable="@drawable/btn3"
+                    android:hint="输入密码"
+                    android:imeOptions="actionNext"
+                    android:textColorHint="#FFCCCCCC" />
+
+                <CheckBox
+                    android:layout_centerVertical="true"
+                    android:id="@+id/yin"
+                    android:layout_width="@dimen/dp_18"
+                    android:layout_height="@dimen/dp_18"
+                    android:layout_alignParentRight="true"
+                    android:button="@null"
+                    android:background="@drawable/btn" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="#FFEEEEEE" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/forget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_19"
+                    android:textColor="#FF2281D2"
+                    android:layout_alignParentRight="true"
+                    android:textSize="@dimen/sp_13"
+                    android:text="忘记密码？"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+           <Button
+            android:id="@+id/mlogin"
+            android:layout_width="@dimen/dp_300"
+            android:layout_height="@dimen/dp_40"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/fucks"
+            android:text="登录"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/sp_18"
+            android:layout_marginTop="@dimen/dp_75"
+            android:layout_marginBottom="@dimen/dp_171"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_marginLeft="@dimen/dp_38"
+            android:layout_marginRight="@dimen/dp_38"
+
+            />
+
+        <Button
+            android:id="@+id/mlogins"
+            android:layout_width="@dimen/dp_300"
+            android:layout_height="@dimen/dp_40"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/fucks"
+            android:text="登录"
+            android:textColor="#ffffff"
+            android:alpha="0.5"
+            android:textSize="@dimen/sp_18"
+            android:layout_marginTop="@dimen/dp_75"
+            android:layout_marginBottom="@dimen/dp_171"
+            android:layout_marginLeft="@dimen/dp_38"
+            android:layout_marginRight="@dimen/dp_38"
+            android:visibility="gone"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

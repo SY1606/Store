@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F2F2F2"
+    tools:context=".view.activity.SelfActivity">
+
+    <RelativeLayout
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_49"
+        android:background="#FF00A0E9"
+
+        >
+
+        <ImageView
+            android:id="@+id/fan"
+            android:layout_width="@dimen/dp_18"
+            android:layout_height="@dimen/dp_18"
+            android:layout_marginTop="@dimen/dp_18"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:src="@drawable/fan"
+
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="自助支付码"
+            android:textColor="#FFFFFFFF"
+            android:textSize="@dimen/sp_18"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/dp_13"
+            android:layout_centerInParent="true"
+            />
+        <TextView
+            android:id="@+id/baocun"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="保存到相册"
+            android:textColor="#FFFFFFFF"
+            android:textSize="@dimen/sp_14"
+            android:gravity="center"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_15"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/xxx"
+        android:layout_width="@dimen/dp_325"
+        android:layout_height="@dimen/dp_472"
+        android:layout_marginTop="@dimen/dp_40"
+        android:background="@drawable/wanda3"
+        android:layout_gravity="center"
+        >
+
+        <ImageView
+            android:id="@+id/erweima"
+            android:layout_width="@dimen/dp_140"
+            android:layout_height="@dimen/dp_150"
+            android:layout_marginTop="@dimen/dp_142"
+            android:layout_marginLeft="@dimen/dp_87"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>

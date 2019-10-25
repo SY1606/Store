@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/head"
+            android:layout_width="@dimen/dp_33"
+            android:layout_height="@dimen/dp_33"
+            app:placeholderImage="@mipmap/cat"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_15"
+            />
+        <TextView
+            android:id="@+id/text_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="微信收款(元)"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:textSize="@dimen/sp_15"
+            android:layout_toRightOf="@+id/head"
+            />
+
+        <TextView
+            android:id="@+id/money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+280.00"
+            android:layout_marginTop="@dimen/dp_16"
+            android:textColor="#FF00A0E9"
+            android:textSize="@dimen/sp_18"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_15"
+            />
+
+
+               <View
+                   android:id="@+id/views"
+                   android:layout_width="match_parent"
+                   android:layout_height="@dimen/dp_2"
+                   android:layout_below="@+id/money"
+                   android:background="#FFEEEEEE"
+                   android:layout_marginTop="@dimen/dp_16"
+                   android:layout_marginLeft="@dimen/dp_58"
+                   >
+
+               </View>
+            <TextView
+                android:id="@+id/text_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="订单编号："
+                android:layout_below="@+id/views"
+                android:layout_marginLeft="@dimen/dp_58"
+                android:layout_marginTop="@dimen/dp_15"
+                android:textColor="#FF333333"
+                />
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1111111111111"
+            android:layout_below="@+id/views"
+            android:layout_toRightOf="@+id/text_number"
+            android:layout_marginTop="@dimen/dp_15"
+            android:textColor="#FF333333"
+            />
+        <TextView
+            android:id="@+id/text_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="交易时间："
+            android:layout_below="@+id/text_number"
+            android:layout_marginTop="@dimen/dp_13"
+            android:layout_marginLeft="@dimen/dp_58"
+            android:textColor="#FF999999"
+            />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2019-03-08 15:00:00"
+            android:layout_below="@+id/number"
+            android:layout_marginTop="@dimen/dp_13"
+            android:layout_toRightOf="@+id/text_number"
+            android:textColor="#FF999999"
+            />
+
+        <TextView
+            android:id="@+id/chenggong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="支付成功"
+            android:layout_below="@+id/number"
+            android:layout_marginTop="@dimen/dp_15"
+            android:textColor="#FF999999"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_15"
+            />
+           </RelativeLayout>
+    <View
+        android:id="@+id/viewss"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_2"
+        android:layout_below="@+id/money"
+        android:background="#FFEEEEEE"
+        android:layout_marginTop="@dimen/dp_16"
+
+        >
+
+    </View>
+
+    </LinearLayout>
+

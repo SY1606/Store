@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF2F2F2"
+    tools:context=".view.activity.MemListActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_49"
+        android:background="#FF00A0E9"
+
+        >
+        <ImageView
+            android:id="@+id/fan"
+            android:layout_width="@dimen/dp_18"
+            android:layout_height="@dimen/dp_18"
+            android:layout_marginTop="@dimen/dp_18"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:src="@drawable/fan"
+            />
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="会员列表"
+            android:textColor="#FFFFFFFF"
+            android:layout_marginTop="@dimen/dp_13"
+            android:textSize="@dimen/sp_18"
+            android:gravity="center"
+            android:textStyle="bold"
+
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="@dimen/dp_300"
+            android:layout_height="29dp"
+            android:textCursorDrawable="@drawable/btn3"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/search_edit_bg"
+            android:hint="请输入手机号搜索"
+            android:paddingLeft="40dp"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/btn_search"
+            android:layout_width="@dimen/dp_17"
+            android:layout_height="@dimen/dp_17"
+            android:layout_alignLeft="@+id/edit_keywords"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:src="@drawable/fang"
+            />
+
+        <TextView
+            android:id="@+id/sousuo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_15"
+            android:textColor="#FF00A0E9"
+            android:layout_marginTop="@dimen/dp_13"
+            android:text="搜索"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_15"
+            />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/text_shi"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="没搜到，请重新输入"
+        android:textSize="@dimen/sp_14"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/searchs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <FrameLayout
+        android:id="@+id/details_framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+</LinearLayout>

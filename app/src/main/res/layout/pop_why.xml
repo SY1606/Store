@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dp_275"
+    android:layout_height="@dimen/dp_400"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/yuan2"
+    android:layout_marginTop="@dimen/dp_50"
+    android:layout_marginLeft="@dimen/dp_50"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+            android:id="@+id/heads"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_65"
+            android:src="@drawable/ju"
+            />
+        <TextView
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_21"
+            android:text="提现说明"
+            android:textColor="#ffffffff"
+            android:textSize="15sp"
+            android:layout_marginLeft="@dimen/dp_100"
+            android:layout_marginTop="@dimen/dp_15"
+            />
+
+    </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/dian2"
+               android:layout_marginTop="@dimen/dp_8"
+               />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="提现受理时间：5:00-22:50"
+                android:layout_marginTop="@dimen/dp_15"
+                android:textSize="@dimen/sp_13"
+                android:textColor="#333333"
+                />
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dian2"
+            android:layout_marginTop="@dimen/dp_8"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提现金额：单日10万元，单笔
+5万元，单笔最低1元"
+            android:layout_marginTop="@dimen/dp_15"
+            android:textSize="@dimen/sp_13"
+            android:textColor="#333333"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dian2"
+            android:layout_marginTop="@dimen/dp_8"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提现手续费：提现金额的0.02%(单
+笔手续费不足0.5元，按照0.5元结
+算)，手续费将从余额提现后自动扣
+除。"
+            android:layout_marginTop="@dimen/dp_15"
+            android:textSize="@dimen/sp_13"
+            android:textColor="#333333"
+
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dian2"
+            android:layout_marginTop="@dimen/dp_8"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_80"
+            android:text="到账时间：您申请的提现预计在2小
+时间内到账，具体到账时间以银行通知
+为准。"
+            android:layout_marginTop="@dimen/dp_15"
+            android:textSize="@dimen/sp_13"
+            android:textColor="#333333"
+            />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/ok"
+        android:layout_width="@dimen/dp_230"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:text="好的，我知道了"
+        android:textSize="@dimen/sp_15"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/fucks"
+        />
+</LinearLayout>

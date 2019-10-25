@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    >
+
+    <RelativeLayout
+        android:id="@+id/weixin1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        >
+
+        <ImageView
+            android:id="@+id/tu"
+            android:layout_width="@dimen/dp_33"
+            android:layout_height="@dimen/dp_33"
+            android:src="@mipmap/wechat_order"
+            android:layout_marginLeft="@dimen/dp_15"
+            />
+
+        <TextView
+            android:id="@+id/x"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="微信收款(元)"
+            android:textColor="#FF333333"
+            android:textSize="@dimen/sp_15"
+            android:layout_toRightOf="@+id/tu"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_5"
+            />
+        <TextView
+            android:id="@+id/money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+10.28"
+            android:textColor="#FF00A0E9"
+            android:textSize="@dimen/sp_18"
+
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_15"
+            />
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_below="@+id/tu"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_58"
+            android:background="#F2F2F2"
+            >
+
+        </View>
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="交易时间：2019-03-01 21:14:01"
+            android:layout_below="@+id/view"
+            android:textSize="@dimen/sp_13"
+            android:layout_marginLeft="@dimen/dp_58"
+            android:layout_marginTop="@dimen/dp_49"
+            android:textColor="#FF999999"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="支付成功"
+            android:layout_marginTop="@dimen/dp_49"
+            android:textColor="#999999"
+            android:layout_below="@id/view"
+            android:textSize="@dimen/sp_13"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_15"
+            />
+
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="订单编号:304037273177"
+            android:layout_below="@+id/view"
+            android:textSize="@dimen/sp_13"
+            android:layout_marginLeft="@dimen/dp_58"
+            android:layout_marginTop="@dimen/dp_15"
+            android:textColor="#333333"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_2"
+            android:background="#EEEEEE"
+            android:layout_below="@+id/time"
+            android:layout_marginTop="@dimen/dp_15"
+            >
+
+        </View>
+
+    </RelativeLayout>
+
+</LinearLayout>

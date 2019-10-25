@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.science.com.rchs">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:name=".http.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/wanda2"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:persistent="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".view.activity_set.GuoqiDetalisActivity" />
+        <activity android:name=".view.activity_set.DisDetalisActivity" />
+        <activity android:name=".view.activity_guest.GukeActivity" />
+        <activity android:name=".view.activity_guest.MoneyActivity" />
+        <activity android:name=".view.activity_guest.TimeActivity" />
+        <activity android:name=".view.activity.T_QueryActivity" />
+        <activity android:name=".view.activity.TixianActivity" />
+        <activity android:name=".view.activity.StarPayActivity" />
+        <activity android:name=".view.activity.Ti_fActivity" />
+        <activity android:name=".view.activity.Ti_SActivity" />
+        <activity android:name=".view.activity.DiscountListActivity" />
+        <activity android:name=".view.activity.SearchActivity" />
+        <activity android:name=".view.activity_bill.ShaiActivity" />
+        <activity android:name=".view.activity.EditorActivity" />
+        <activity android:name=".view.activity.MingXiActivity" />
+        <activity android:name=".view.activity.HexiaoActivity" />
+        <activity android:name=".view.activity.MemListActivity" />
+        <activity android:name=".view.activity.ChongActivity" />
+        <activity android:name=".view.activity.Success_PayActivity" />
+        <activity android:name=".view.activity.CRecordActivity" />
+        <activity android:name=".view.activity.RecordActivity" />
+        <activity android:name=".view.activity.Scan_hActivity" />
+        <activity android:name=".view.activity_set.UpdatePwdActivity" />
+        <activity android:name=".view.activity_set.ChooseStoreActivity" />
+        <activity android:name=".view.activity.NewDiscountActivity" />
+        <activity android:name=".view.activity.StoreActivity" />
+        <activity android:name=".view.activity_bill.Success_t_Activity" />
+        <activity android:name=".view.activity_bill.RefundMoneyActivity" />
+        <activity android:name=".view.activity_bill.RefundActivity" />
+        <activity android:name=".view.activity_bill.DalisListActivity" />
+        <activity android:name=".view.activity.ConsumeActivity" />
+        <activity android:name=".view.activity.SelfActivity" />
+        <activity android:name=".view.activity.AddCodeActivity" />
+        <activity android:name=".view.activity.DeleteCodeActivity" />
+        <activity android:name=".view.activity.ChooseActivity" />
+        <activity android:name=".view.activity.FixedActivity" />
+        <activity android:name=".view.activity.SuccessActivity" />
+        <activity android:name=".view.activity.SacnActivity" />
+        <activity android:name=".view.activity.HomeActivity" />
+        <activity android:name=".view.activity.ForgetActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".view.activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.ColorActivity" />
+        <activity android:name=".view.activity.ResultActivity" />
+        <activity android:name=".view.activity.Success_tActivity" />
+        <activity android:name=".view.activity.OrderDalisActivity" />
+        <activity android:name=".view.activity.OrderDalis1Activity" />
+        <activity android:name=".view.dalis.DisDetalis1Activity" />
+        <activity android:name=".view.dalis.DisDetalis2Activity" />
+        <activity android:name=".view.dalis.DisDetalis3Activity" />
+        <activity android:name=".view.activity.OpenActivity" />
+        <activity android:name=".view.activity.ChooseCodeActivity" />
+        <activity android:name=".view.activity_set.ChooseStActivity" />
+        <activity android:name=".view.activity.PCorderActivity" />
+        <activity android:name=".view.activity.BianjiActivity" />
+        <activity android:name=".view.activity.Bianji1Activity" />
+        <activity android:name=".view.activity.Bianji3Activity" />
+        <activity android:name=".view.activity.Success2Activity" />
+        <activity android:name=".view.activity.LoginActivity" />
+        <activity android:name=".view.activity_bill.OrderDalis2Activity"></activity>
+    </application>
+
+</manifest>

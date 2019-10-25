@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mdraw"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="false"
+    android:hapticFeedbackEnabled="false"
+    android:background="#fff">
+
+
+    <LinearLayout
+        android:id="@+id/mlinear_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/mframe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="#eee"
+
+            ></View>
+        <RadioGroup
+            android:id="@+id/rg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:orientation="horizontal"
+            android:background="#ffffff"
+            >
+
+            <RadioButton
+                android:id="@+id/gather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/sel_but3"
+                android:gravity="center"
+                android:paddingTop="@dimen/dp_5"
+                android:text="收款"
+                android:textColor="@drawable/text1"/>
+
+            <RadioButton
+                android:id="@+id/bill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/sel_but8"
+                android:gravity="center"
+                android:paddingTop="@dimen/dp_10"
+                android:textColor="@drawable/text1"
+                android:text="账单" />
+            <RadioButton
+            android:id="@+id/guest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/sel_but9"
+            android:gravity="center"
+            android:paddingTop="@dimen/dp_10"
+            android:text="聚客"
+                android:textColor="@drawable/text1"/>
+            <RadioButton
+                android:id="@+id/set"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/sel_but10"
+                android:gravity="center"
+                android:paddingTop="@dimen/dp_10"
+                android:text="设置"
+                android:textColor="@drawable/text1"/>
+        </RadioGroup>
+    </LinearLayout>
+
+</LinearLayout>
